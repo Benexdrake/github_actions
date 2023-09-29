@@ -68,5 +68,4 @@ jobs:
             npm ci
             pm2 delete '${{inputs.APP_NAME}}'
             pm2 start npm --name '${{inputs.APP_NAME}}' -- start
-            pm2 restart '${{inputs.APP_NAME}}'
             pm2 save

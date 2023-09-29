@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy for node and pm2
 on: 
     workflow_call:
       inputs:

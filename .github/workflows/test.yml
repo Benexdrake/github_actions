@@ -1,0 +1,24 @@
+name: Test
+on: 
+  workflow_call:
+    inputs:
+      NODE_VERSION:
+        description: Node Version Number
+        required: true
+        type: number
+
+jobs:
+  test:
+    # Runs on Server Ubuntu or Windows or others
+    runs-on: ubuntu-20.04
+    steps:
+      # Get Code
+    - uses: actions/checkout@v3
+
+      # Cache Dependencies
+    - name: Load & Cache Dependencies
+      uses: ./.github/actions/cached-deps
+
+      # Testing the Code with Jest or other Frameworks
+    - name: Testing
+      run: echo "Test"

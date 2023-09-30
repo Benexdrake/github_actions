@@ -39,5 +39,4 @@ jobs:
       with:
         name: build-files
         path: |
-          'README.md'
-          !node_modules
+          './README.md'

@@ -32,7 +32,7 @@ jobs:
       uses: jsdaniell/create-json@v1.2.2
       with:
         name: "config.json"
-        json: '{"token": ${{secrets.TOKEN}}, "baseurl": ${{secrets.BASEURL}}}'
+        json: '{"token": "${{secrets.TOKEN}}", "base"rl": "${{secrets.BASEURL}}"}'
 
       # Upload Files for other Jobs to download
     - name: Upload Artifacts

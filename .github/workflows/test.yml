@@ -15,10 +15,6 @@ jobs:
       # Get Code
     - uses: actions/checkout@v3
 
-      # Cache Dependencies
-    - name: Load & Cache Dependencies
-      uses: benexdrake/github_actions/.github/actions/cached-deps
-
       # Testing the Code with Jest or other Frameworks
     - name: Testing
       run: echo "Test"

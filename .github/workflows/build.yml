@@ -17,6 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Load & Cache Dependencies
+      uses: benexdrake/github_actions/.github/actions/cached-deps
+
       # Build the Project with npm run build
     - name: Build Project
       run: npm run build

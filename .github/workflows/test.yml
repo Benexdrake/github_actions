@@ -17,7 +17,7 @@ jobs:
 
       # Cache Dependencies
     - name: Load & Cache Dependencies
-      uses: ./.github/actions/cached-deps
+      uses: benexdrake/github_actions/.github/actions/cached-deps
 
       # Testing the Code with Jest or other Frameworks
     - name: Testing

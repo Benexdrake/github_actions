@@ -13,6 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Remove .git
+      run: rm -r .git
+
+    - name: Remove .github
+      run: rm -r .github
+
     - name: ls Files
       run: ls -a
     

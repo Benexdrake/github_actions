@@ -24,7 +24,7 @@ jobs:
         key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
 
     - name: test
-      run: echo "hallo=1111\nwelt=11111" > .env.local
+      run: echo $'hallo=1111\nwelt=11111' > .env.local
 
     - name: ls files
       run: ls -a

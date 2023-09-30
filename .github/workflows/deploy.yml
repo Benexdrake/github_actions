@@ -46,7 +46,9 @@ jobs:
             server: ${{ secrets.IP }}
             password: ${{ secrets.PASSWORD }}
             ssh_private_key: ${{ secrets.SSH }} 
-            local_path: './'
+            local_path: |
+              './'
+              '!node_modules'
             remote_path: ${{inputs.DEPLOY_PATH}}
 
         # Connecting to Server over SSH and cd to path for App, install dependencies and then restart service

@@ -31,13 +31,13 @@ on:
 jobs: 
   build:
     env:
-      NEXTAUTH_URL: 'TEST${{secrets.NEXTAUTH_URL}}'
-      Discord_Client: ${{secrets.DISCORD_CLIENT}}
-      Discord_Secret: ${{secrets.DISCORD_SECRET}}
-      Github_User: ${{secrets.GH_USER}}
-      Github_Secret: ${{secrets.GH_SECRET}}
-      Mongo: ${{secrets.MONGO}}
-      PROTECT_API: ${{secrets.PROTECT_API}}
+      NEXTAUTH_URL: '${{secrets.NEXTAUTH_URL}}'
+      Discord_Client: '${{secrets.DISCORD_CLIENT}}'
+      Discord_Secret: '${{secrets.DISCORD_SECRET}}'
+      Github_User: '${{secrets.GH_USER}}'
+      Github_Secret: '${{secrets.GH_SECRET}}'
+      Mongo: '${{secrets.MONGO}}'
+      PROTECT_API: '${{secrets.PROTECT_API}}'
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3

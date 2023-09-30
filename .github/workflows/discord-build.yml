@@ -15,23 +15,13 @@ jobs:
 
     - name: ls Files
       run: ls -a
-    # - name: Cache Dependencies
-    #   uses: actions/cache@v3
-    #   with:
-    #     path: ~/.npm
-    #     key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-
-    # - name: Install NodeJs
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: ${{inputs.NODE_VERSION}}
-      
-    # - name: Install Dependencies
-    #   run: npm ci
-
-    #   # Build the Project with npm run build
-    # - name: Build Project
-    #   run: npm run build
+    
+    - name: create-json
+      id: create-json
+      uses: jsdaniell/create-json@v1.2.2
+      with:
+        name: "test.json"
+        json: '{"token":"jsdaniell", "baseurl":"mypass"}'
 
       # Upload Files for other Jobs to download
     - name: Upload Artifacts

@@ -13,6 +13,29 @@ on:
     secrets:
       ABOUTME:
         required: true
+      GH_USER:
+        required: true
+      GH_SECRET:
+        required: true
+      MONGO:
+        required: true
+      NEXTAUTH_URL:
+        required: true
+      PROTECT_API:
+        required: true
+      DISCORD_CLIENT:
+        required: true
+      DISCORD_SECRET:
+        required: true
+
+env:
+  NEXTAUTH_URL: ${{secrets.NEXTAUTH_URL}}
+  Discord_Client: ${{secrets.DISCORD_CLIENT}}
+  Discord_Secret: ${{secrets.DISCORD_SECRET}}
+  Github_User: ${{secrets.GH_USER}}
+  Github_Secret: ${{secrets.GH_SECRET}}
+  Mongo: ${{secrets.MONGO}}
+  PROTECT_API: ${{secrets.PROTECT_API}}
 
 jobs: 
   build:

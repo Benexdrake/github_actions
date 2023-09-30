@@ -58,7 +58,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{inputs.PORT}}
           script: |
-            cd /var/www/app
+            cd ${{inputs.DEPLOY_PATH}}
             npm ci
             pm2 delete '${{inputs.APP_NAME}}'
             pm2 start npm --name '${{inputs.APP_NAME}}' -- start

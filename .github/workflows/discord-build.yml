@@ -9,11 +9,12 @@ on:
 
 jobs: 
   build:
-    env:
-      mainPath: ${{github.workspace}}
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
+
+    - name: Remove node_modules
+      run: rm -r node_modules
 
     - name: ls Files
       run: ls -a
@@ -30,6 +31,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: build-files
-        path: |
-          '${{env.mainPath}}'
-          '!${{env.mainPath}}'/node_modules
+        path: ${{github.workspace}}

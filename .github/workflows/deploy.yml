@@ -35,12 +35,6 @@ jobs:
         with:
           name: build-files
 
-      - name: Cache Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-
       - name: ls Files
         run: ls -a
 

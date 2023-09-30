@@ -1,0 +1,57 @@
+name: Build
+on: 
+  workflow_call:
+    inputs:
+      NODE_VERSION:
+        description: Node Version Number
+        required: true
+        type: number
+      BUILD_FOLDER:
+        description: Build Folder
+        required: true
+        type: string
+    secrets:
+      ABOUTME:
+        required: true
+
+jobs: 
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Cache Dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+
+
+    - name: Install NodeJs
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{inputs.NODE_VERSION}}
+      
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: create-json
+      id: create-json
+      uses: jsdaniell/create-json@v1.2.2
+      with:
+        name: "config.json"
+        json: '${{secrets.ABOUTME}}'
+
+      # Build the Project with npm run build
+    - name: Build Project
+      run: npm run build
+
+      # Upload Files for other Jobs to download
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-files
+        path: |
+          ${{inputs.BUILD_FOLDER}}
+          package.json
+          package-lock.json

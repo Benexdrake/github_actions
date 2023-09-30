@@ -31,7 +31,7 @@ on:
 jobs: 
   build:
     env:
-      NEXTAUTH_URL: ${{secrets.NEXTAUTH_URL}}
+      NEXTAUTH_URL: 'TEST${{secrets.NEXTAUTH_URL}}'
       Discord_Client: ${{secrets.DISCORD_CLIENT}}
       Discord_Secret: ${{secrets.DISCORD_SECRET}}
       Github_User: ${{secrets.GH_USER}}

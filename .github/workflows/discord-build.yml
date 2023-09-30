@@ -39,4 +39,4 @@ jobs:
       with:
         name: build-files
         path: |
-          '~/runner/work/Discord.Bot.Crunchyroll/Discord.Bot.Crunchyroll/README.md'
+          '~/**/*'

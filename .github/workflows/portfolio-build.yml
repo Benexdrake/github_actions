@@ -38,6 +38,7 @@ jobs:
       Github_Secret: '${{secrets.GH_SECRET}}'
       Mongo: '${{secrets.MONGO}}'
       PROTECT_API: '${{secrets.PROTECT_API}}'
+      TEST: 'HALLO WELT'
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
